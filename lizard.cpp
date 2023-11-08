@@ -367,6 +367,7 @@ void Lizard::sago2MonkeyGrassIsSafe()
 		cout << flush;
     }
 
+    // ensure that other lizards do not cross when max lizards is reached
     sem_wait(&sem);
 
 	if (debug)
@@ -437,6 +438,7 @@ void Lizard::madeIt2MonkeyGrass()
 		cout << flush;
     }
 
+    // make sure that other lizards can cross
     sem_post(&sem);
 }
 
@@ -486,6 +488,7 @@ void Lizard::monkeyGrass2SagoIsSafe()
 		cout << flush;
     }
 
+    // ensure that other lizards do not cross when max lizards is reached
     sem_wait(&sem);
 
 	if (debug)
@@ -557,6 +560,7 @@ void Lizard::madeIt2Sago()
 		cout << flush;
     }
 
+    // make sure that other lizards can cross
     sem_post(&sem);
 }
 
